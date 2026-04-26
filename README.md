@@ -1,14 +1,26 @@
-# abap-harness
+# ABAP Harness
 
-ABAP harness rules for Claude based on the coding patterns in the `ABAP-PROGRAMING` repository.
+Reusable Claude Code harness for ABAP report, ALV, module pool, BDC, CDS, AMDP, and Gateway work.
+
+## Load Strategy
+
+- Use `CLAUDE.md` as the default instruction file.
+- Do not load every rule file by default.
+- Open detailed files only when the task needs that topic.
 
 ## Files
 
-- `CLAUDE_ABAP_HARNESS_RULES.md`
-- `CLAUDE_AMDP_RULES.md`
-- `CLAUDE_GATEWAY_RULES.md`
-- `CLAUDE_HANDOFF_NEXT_STEPS.md`
+- `CLAUDE.md`: default core harness for Claude Code.
+- `CLAUDE_ABAP_HARNESS_RULES.md`: full ABAP reference.
+- `CLAUDE_BDC_RULES.md`: BDC and batch-input reference.
+- `CLAUDE_CDS_RULES.md`: CDS reference.
+- `CLAUDE_AMDP_RULES.md`: AMDP reference.
+- `CLAUDE_GATEWAY_RULES.md`: Gateway CRUD reference.
+- `CLAUDE_MACRO_RULES.md`: macro reference.
+- `CLAUDE_HANDOFF_NEXT_STEPS.md`: project handoff notes.
 
-## Purpose
+## Usage
 
-This repository stores the rule documents used to keep Claude aligned with the established ABAP coding style, naming, ALV patterns, Gateway patterns, and AMDP patterns learned from the user's repository examples.
+Copy `CLAUDE.md` into an ABAP project root, or keep this repository as a reusable rules source.
+
+For Claude Code subdirectory loading, place focused `CLAUDE.md` files inside topic folders only when the real code repository has matching folders such as `alv/`, `bdc/`, `gateway/`, or `amdp/`.

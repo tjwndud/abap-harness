@@ -4,13 +4,18 @@
 
 This file is a handoff note for continuing the ABAP harness work on another laptop or in another session.
 
-Open this file first, then open the main rules documents in the same folder.
+For normal Claude Code use, load `CLAUDE.md` first.
+Open detailed rule files only when the task needs that topic.
 
 ## Files Already Created
 
 - `CLAUDE_ABAP_HARNESS_RULES.md`
+- `CLAUDE.md`
 - `CLAUDE_AMDP_RULES.md`
+- `CLAUDE_BDC_RULES.md`
+- `CLAUDE_CDS_RULES.md`
 - `CLAUDE_GATEWAY_RULES.md`
+- `CLAUDE_MACRO_RULES.md`
 
 ## What Has Already Been Decided
 
@@ -52,13 +57,20 @@ The following directions are already fixed and should be treated as repository r
 
 ## Current Document Structure
 
+### Default Core Harness
+
+Use `CLAUDE.md` by default for any ABAP program.
+
+Do not load all reference files at once. Load topic files only when needed.
+
 ### Main ABAP Rules
 
-Use `CLAUDE_ABAP_HARNESS_RULES.md` for:
+Use `CLAUDE_ABAP_HARNESS_RULES.md` only as the full reference for:
 
 - report structure
 - declarations
 - ALV
+- module pool
 - popup ALV
 - editable ALV
 - splitter
@@ -68,7 +80,14 @@ Use `CLAUDE_ABAP_HARNESS_RULES.md` for:
 - SQL rules
 - messaging
 - flow control
-- macros
+
+### BDC Rules
+
+Use `CLAUDE_BDC_RULES.md` only for BDC or batch-input work.
+
+### Macro Rules
+
+Use `CLAUDE_MACRO_RULES.md` only when defining or changing macros.
 
 ### AMDP Rules
 
@@ -81,6 +100,17 @@ Use `CLAUDE_AMDP_RULES.md` for:
 - `CLASS-METHODS`
 - SQLScript rules
 - AMDP selection priority
+
+### CDS Rules
+
+Use `CLAUDE_CDS_RULES.md` for:
+
+- Eclipse-context CDS work
+- annotation order
+- `define view`
+- OData publish annotations
+- field selection and key handling
+- CDS selection priority
 
 ### Gateway Rules
 
@@ -99,25 +129,29 @@ The most useful next step is to keep extending the harness with still-missing re
 
 Recommended order:
 
-1. `BDC` rules
-2. `CDS` rules
-3. `Module Pool` rules
-4. `Screen number / dynpro naming` rules
-5. `Subroutine and FORM parameter style`
-6. `CALL SCREEN / LEAVE TO SCREEN / screen navigation patterns`
-7. `Search help / F4 handling`
-8. `Icon handling`
-9. `Top-of-page / document header ALV helper patterns`
-10. `File upload / download / frontend service patterns`
+1. `Top-of-page / document header ALV helper patterns`
+2. `File upload / download / frontend service patterns`
+3. `Search help / F4 handling` only when requested
 
 ## Recommended Immediate Next Prompts
 
 When resuming with Codex or Claude, continue in this style:
 
-- `Read CLAUDE_HANDOFF_NEXT_STEPS.md and CLAUDE_ABAP_HARNESS_RULES.md first, then continue defining missing repository rules.`
-- `Next, search the repository for BDC examples and turn the repeated pattern into a new rules section.`
-- `Next, search the repository for CDS examples and create a separate CDS rules markdown if needed.`
+- `Read CLAUDE.md first. Open detailed references only if the task needs them.`
+- `Use CLAUDE_ABAP_HARNESS_RULES.md as the full reference only when core rules are not enough.`
 - `Continue the harness in repository-first style and ask rule-decision questions in the same style as before.`
+
+These are now done:
+
+- `BDC` rules split into `CLAUDE_BDC_RULES.md`
+- `Macro` rules split into `CLAUDE_MACRO_RULES.md`
+- `Module Pool` rules added to the main ABAP harness
+- `CDS` rules split into `CLAUDE_CDS_RULES.md`
+- `Screen number / dynpro naming` rules added to the main ABAP harness
+- `Subroutine and FORM parameter style` rules added to the main ABAP harness
+- `ALV variant / refresh stable` rules added
+- `Icon handling` rules added
+- Root `CLAUDE.md` core harness created for default Claude Code loading
 
 ## How Rule Questions Should Continue
 
@@ -146,6 +180,7 @@ When continuing the work, these folders are especially useful because they conta
 
 ## Things To Be Careful About
 
+- do not load every rule file by default
 - do not rewrite repository style into a cleaner but different style unless the user explicitly asks
 - do not use `SELECT *`
 - do not treat toolbar as one concept without first distinguishing ALV toolbar vs application toolbar
@@ -157,4 +192,4 @@ When continuing the work, these folders are especially useful because they conta
 
 If a later session needs one exact resume point, start here:
 
-`The next step is to define missing BDC, CDS, and Module Pool rules by searching the repository and adding them either into the main ABAP harness or into separate markdown files if the topic deserves its own document.`
+`Start with CLAUDE.md. If the task is BDC, CDS, AMDP, Gateway, Macro, or full-reference ABAP, open only the matching detailed file.`
