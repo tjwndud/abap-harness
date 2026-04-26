@@ -16,6 +16,7 @@ Reusable Claude Code harness for ABAP report, ALV, module pool, BDC, CDS, AMDP, 
 - `CLAUDE_AMDP_RULES.md`: AMDP reference.
 - `CLAUDE_GATEWAY_RULES.md`: Gateway CRUD reference.
 - `CLAUDE_HANDOFF_NEXT_STEPS.md`: project handoff notes.
+- `HARNESS_FEEDBACK.md`: operating log for issues to consider in a future v2 update.
 
 ## Usage
 
