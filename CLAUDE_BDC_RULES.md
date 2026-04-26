@@ -5,7 +5,7 @@
 This document defines BDC and batch-input rules Claude must follow for this repository.
 
 BDC work is a specific flow and should not make the main ABAP harness heavier.
-When BDC is needed, Claude must follow this document together with `CLAUDE_ABAP_HARNESS_RULES.md`.
+When BDC is needed, Claude must follow this document together with the default `CLAUDE.md`.
 
 ## BDC Rule
 

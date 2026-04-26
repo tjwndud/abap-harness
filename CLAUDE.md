@@ -29,6 +29,7 @@ Load only this file by default. Open detailed rule files only when the task need
 - Use include split: `TOP`, `C01`, `O01`, `I01`, `F01`.
 - `TOP`: globals, tables, types, macros, common variables, ALV declarations.
 - `C01`: event classes. `O01`: PBO. `I01`: PAI. `F01`: FORM and business logic.
+- Prefer TOP order: macros, `TABLES`, class instances, internal tables/work areas, ALV declarations, common variables, screen or popup helpers.
 - Keep globals in `TOP` with grouped `DATA :` style.
 - Local temporary variables may use inline syntax.
 - Do not convert top-level globals into inline style.
@@ -57,10 +58,11 @@ Load only this file by default. Open detailed rule files only when the task need
 - First display commonly passes `is_variant`, `i_save = 'A'`, `i_default = 'X'`, and `is_layout`.
 - Event methods belong in `C01`, stay thin, and delegate to `PERFORM`.
 - Editable ALV uses `celltab`, `gs_layout-stylefname`, edit-event registration, and FORM-based modify handling.
-- Refresh in `FORM refresh_table`; pass stable row/col via `lvc_s_stbl`.
+- Refresh in `FORM refresh_table`; pass stable row/col via `lvc_s_stbl`, commonly `VALUE #( col = abap_true row = abap_true )`.
 - Use `PERFORM refresh_table` after add, delete, edit, mode toggle, or redisplay.
 - For colors and icons, use processed fields and connect them through layout/field behavior.
 - Icons must be real SAP icon table constants; do not invent fake `icon_*` names.
+- Common valid examples include `icon_led_green`, `icon_led_red`, `icon_refresh`, `icon_insert_row`, `icon_delete_row`, `icon_toggle_display_change`, and `icon_xls`.
 - If the right icon is unclear, ask which SAP icon to use.
 
 ## Popup, Splitter, Tab
@@ -68,6 +70,7 @@ Load only this file by default. Open detailed rule files only when the task need
 - Popup trigger is flexible, but resources must be separated.
 - Popup flow: prepare data, call popup screen, display content.
 - Popup names commonly use `go_pop_grid`, `gt_pfcat`, `gs_playout`, `gs_pop_layout`.
+- Popup helper names may use repository style such as `init_popup_process`, `init_pop1_process`, `pop_exit`, and `pop2_exit`.
 - Multi-ALV names should be role-based: `go_top_grid`, `go_bottom_grid`, `go_left_grid`, `go_right_grid`; align data, field catalog, and layout names by role.
 - Tab strip uses `gv_dynnr TYPE sy-dynnr` and normal `OKCODE` flow.
 
@@ -99,11 +102,13 @@ Load only this file by default. Open detailed rule files only when the task need
 - Popup may use `CALL SCREEN 110 STARTING AT 05 06`.
 - Screen groups are main/popup/sub: `100/110/101`, `200/210/201`, `300/310/301`.
 - Module suffixes may stay four-digit: `status_0100`, `user_command_0110`, `status_0101`.
+- Align screen-specific status/title names when used, such as `MENU100/TITLE100`, `MENU110/TITLE110`, and `MENU210/TITLE210`.
 - Close ALV screens and popups by freeing owned GUI resources, then `LEAVE TO SCREEN 0`.
 
 ## FORM And Flow
 
 - Use parameterless `FORM ... .` for global-state routines; use `USING` for inputs and `CHANGING` for explicit write-back.
+- Scalar input parameters commonly use `USING VALUE(pv_xxx)`; object or reference roles may use `po_` or `pr_` when meaningful.
 - Do not introduce `TABLES` in new FORM routines by default.
 - Use `TABLES ... STRUCTURE ...` only when preserving or extending classic repository FORM style.
 - Check `sy-subrc` after result-sensitive operations.
@@ -116,8 +121,9 @@ Load only this file by default. Open detailed rule files only when the task need
 - Do not mix ALV toolbar and application toolbar.
 - Prefer message classes over hardcoded text.
 - Keep repository comment style: standalone `*--`, inline `"`.
-- Macro rules follow `CLAUDE_MACRO_RULES.md`; do not hide business logic in macros.
+- Macros stay in `TOP`, only for short repeated patterns such as init, range build, popup confirm, toolbar append, message text, date helper, or conversion wrapper.
+- Do not hide business logic inside macros.
 
 ## Detailed Rules
 
-Open detailed files only when needed: `CLAUDE_BDC_RULES.md`, `CLAUDE_CDS_RULES.md`, `CLAUDE_AMDP_RULES.md`, `CLAUDE_GATEWAY_RULES.md`, `CLAUDE_MACRO_RULES.md`, or full `CLAUDE_ABAP_HARNESS_RULES.md`.
+Open detailed files only when needed: `CLAUDE_BDC_RULES.md`, `CLAUDE_CDS_RULES.md`, `CLAUDE_AMDP_RULES.md`, or `CLAUDE_GATEWAY_RULES.md`.

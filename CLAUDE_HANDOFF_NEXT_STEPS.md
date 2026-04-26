@@ -9,13 +9,11 @@ Open detailed rule files only when the task needs that topic.
 
 ## Files Already Created
 
-- `CLAUDE_ABAP_HARNESS_RULES.md`
 - `CLAUDE.md`
 - `CLAUDE_AMDP_RULES.md`
 - `CLAUDE_BDC_RULES.md`
 - `CLAUDE_CDS_RULES.md`
 - `CLAUDE_GATEWAY_RULES.md`
-- `CLAUDE_MACRO_RULES.md`
 
 ## What Has Already Been Decided
 
@@ -63,31 +61,13 @@ Use `CLAUDE.md` by default for any ABAP program.
 
 Do not load all reference files at once. Load topic files only when needed.
 
-### Main ABAP Rules
+### Core ABAP Rules
 
-Use `CLAUDE_ABAP_HARNESS_RULES.md` only as the full reference for:
-
-- report structure
-- declarations
-- ALV
-- module pool
-- popup ALV
-- editable ALV
-- splitter
-- tab strip
-- selection screen
-- ranges
-- SQL rules
-- messaging
-- flow control
+Use `CLAUDE.md` for report structure, declarations, ALV, module pool, popup ALV, editable ALV, splitter, tab strip, selection screen, ranges, SQL, messaging, flow control, and macro rules.
 
 ### BDC Rules
 
 Use `CLAUDE_BDC_RULES.md` only for BDC or batch-input work.
-
-### Macro Rules
-
-Use `CLAUDE_MACRO_RULES.md` only when defining or changing macros.
 
 ### AMDP Rules
 
@@ -138,13 +118,12 @@ Recommended order:
 When resuming with Codex or Claude, continue in this style:
 
 - `Read CLAUDE.md first. Open detailed references only if the task needs them.`
-- `Use CLAUDE_ABAP_HARNESS_RULES.md as the full reference only when core rules are not enough.`
 - `Continue the harness in repository-first style and ask rule-decision questions in the same style as before.`
 
 These are now done:
 
 - `BDC` rules split into `CLAUDE_BDC_RULES.md`
-- `Macro` rules split into `CLAUDE_MACRO_RULES.md`
+- `Macro` rules absorbed into `CLAUDE.md`
 - `Module Pool` rules added to the main ABAP harness
 - `CDS` rules split into `CLAUDE_CDS_RULES.md`
 - `Screen number / dynpro naming` rules added to the main ABAP harness
@@ -152,6 +131,7 @@ These are now done:
 - `ALV variant / refresh stable` rules added
 - `Icon handling` rules added
 - Root `CLAUDE.md` core harness created for default Claude Code loading
+- Oversized full reference and thin macro reference removed after key details were absorbed into `CLAUDE.md`
 
 ## How Rule Questions Should Continue
 
@@ -192,4 +172,4 @@ When continuing the work, these folders are especially useful because they conta
 
 If a later session needs one exact resume point, start here:
 
-`Start with CLAUDE.md. If the task is BDC, CDS, AMDP, Gateway, Macro, or full-reference ABAP, open only the matching detailed file.`
+`Start with CLAUDE.md. If the task is BDC, CDS, AMDP, or Gateway, explicitly attach only the matching detailed file.`
