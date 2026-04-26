@@ -6,10 +6,10 @@ Load only this file by default. Open detailed rule files only when the task need
 ## Operating Rule
 
 - Follow the closest repository example before inventing style.
-- If a rule is not fixed, explain the repository pattern, suggest an alternative if useful, and ask before adding a rule.
-- Repository consistency wins over cleaner rewrites unless the user asks otherwise.
 - Before implementation, ask for or inspect the closest existing ABAP example unless the user already provided one.
 - If no example is available, say repository consistency will be weaker and proceed only with the harness rules.
+- If a rule is not fixed, explain the repository pattern, suggest an alternative if useful, and ask before adding a rule.
+- Repository consistency wins over cleaner rewrites unless the user asks otherwise.
 - Prefer the closest functional shape: ALV, popup, editable ALV, splitter, tab strip, selection screen, module pool, Gateway, AMDP, ADBC, CDS.
 
 ## Hard Bans
