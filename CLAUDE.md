@@ -125,6 +125,16 @@ Load only this file by default. Open detailed rule files only when the task need
 - Macros stay in `TOP`, only for short repeated patterns such as init, range build, popup confirm, toolbar append, message text, date helper, or conversion wrapper.
 - Do not hide business logic inside macros.
 
-## Detailed Rules
+## Framework Navigation
 
-Open detailed files only when needed: `CLAUDE_BDC_RULES.md`, `CLAUDE_CDS_RULES.md`, `CLAUDE_AMDP_RULES.md`, or `CLAUDE_GATEWAY_RULES.md`.
+- Start from this root `CLAUDE.md` for every ABAP task.
+- Use `docs/INDEX.md` as the framework map when you need to find a focused reference.
+- Use `docs/ARCHITECTURE.md` to understand how this harness is organized.
+- Open topic rules only when the task needs them:
+  - `docs/rules/BDC.md`
+  - `docs/rules/CDS.md`
+  - `docs/rules/AMDP.md`
+  - `docs/rules/GATEWAY.md`
+- Use operations notes only for maintenance or handoff:
+  - `docs/operations/HANDOFF_NEXT_STEPS.md`
+  - `docs/operations/FEEDBACK.md`

@@ -10,10 +10,10 @@ Open detailed rule files only when the task needs that topic.
 ## Files Already Created
 
 - `CLAUDE.md`
-- `CLAUDE_AMDP_RULES.md`
-- `CLAUDE_BDC_RULES.md`
-- `CLAUDE_CDS_RULES.md`
-- `CLAUDE_GATEWAY_RULES.md`
+- `docs/rules/AMDP.md`
+- `docs/rules/BDC.md`
+- `docs/rules/CDS.md`
+- `docs/rules/GATEWAY.md`
 
 ## What Has Already Been Decided
 
@@ -67,11 +67,11 @@ Use `CLAUDE.md` for report structure, declarations, ALV, module pool, popup ALV,
 
 ### BDC Rules
 
-Use `CLAUDE_BDC_RULES.md` only for BDC or batch-input work.
+Use `docs/rules/BDC.md` only for BDC or batch-input work.
 
 ### AMDP Rules
 
-Use `CLAUDE_AMDP_RULES.md` for:
+Use `docs/rules/AMDP.md` for:
 
 - Eclipse-context AMDP work
 - class structure
@@ -83,7 +83,7 @@ Use `CLAUDE_AMDP_RULES.md` for:
 
 ### CDS Rules
 
-Use `CLAUDE_CDS_RULES.md` for:
+Use `docs/rules/CDS.md` for:
 
 - Eclipse-context CDS work
 - annotation order
@@ -94,7 +94,7 @@ Use `CLAUDE_CDS_RULES.md` for:
 
 ### Gateway Rules
 
-Use `CLAUDE_GATEWAY_RULES.md` for:
+Use `docs/rules/GATEWAY.md` for:
 
 - `DPC_EXT`
 - CRUD redefinition methods
@@ -122,10 +122,10 @@ When resuming with Codex or Claude, continue in this style:
 
 These are now done:
 
-- `BDC` rules split into `CLAUDE_BDC_RULES.md`
+- `BDC` rules split into `docs/rules/BDC.md`
 - `Macro` rules absorbed into `CLAUDE.md`
 - `Module Pool` rules added to the main ABAP harness
-- `CDS` rules split into `CLAUDE_CDS_RULES.md`
+- `CDS` rules split into `docs/rules/CDS.md`
 - `Screen number / dynpro naming` rules added to the main ABAP harness
 - `Subroutine and FORM parameter style` rules added to the main ABAP harness
 - `ALV variant / refresh stable` rules added
