@@ -1,0 +1,20 @@
+# Local assistant settings
+.claude/settings.local.json
+
+# Dependency and generated output folders
+node_modules/
+outputs/
+tools/
+workspaces/
+
+# Task-specific office/export artifacts
+*.pptx
+*.xlsx
+*.xls
+*.csv
+*.tsv
+*.pdf
+
+# OS/editor noise
+.DS_Store
+Thumbs.db

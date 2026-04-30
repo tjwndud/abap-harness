@@ -1,10 +1,11 @@
 # ABAP Harness Framework
 
-Reusable Claude Code framework for ABAP report, ALV, module pool, BDC, CDS, AMDP, and Gateway work.
+Reusable instruction framework for ABAP report, ALV, module pool, BDC, CDS, AMDP, and Gateway work.
 
 ## Structure
 
-- `CLAUDE.md`: default core harness loaded first.
+- `CLAUDE.md`: default core harness for Claude Code.
+- `AGENTS.md`: default core harness for Codex.
 - `docs/INDEX.md`: map of the framework and load strategy.
 - `docs/ARCHITECTURE.md`: directory structure and extension pattern.
 - `docs/rules/`: focused topic rules.
@@ -13,7 +14,7 @@ Reusable Claude Code framework for ABAP report, ALV, module pool, BDC, CDS, AMDP
 
 ## Load Strategy
 
-1. Start with `CLAUDE.md`.
+1. Start with the assistant-specific root instruction file: `CLAUDE.md` or `AGENTS.md`.
 2. Use `docs/INDEX.md` to choose the smallest extra reference.
 3. Before implementation, inspect the closest existing ABAP source example.
 4. For BDC, CDS, AMDP, or Gateway work, attach only the matching file under `docs/rules/`.
@@ -33,7 +34,7 @@ Reusable Claude Code framework for ABAP report, ALV, module pool, BDC, CDS, AMDP
 
 ## Usage
 
-Copy this repository into an ABAP project as a reusable rules source, or copy only `CLAUDE.md` plus the relevant `docs/rules/` file for a smaller task.
+Copy this repository into an ABAP project as a reusable rules source, or copy only the root harness file plus the relevant `docs/rules/` file for a smaller task.
 
 Claude Code command prompts:
 

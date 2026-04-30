@@ -4,6 +4,7 @@
 
 ```text
 .
+|-- AGENTS.md
 |-- CLAUDE.md
 |-- README.md
 |-- .claude/
@@ -26,6 +27,7 @@
 ## Design Rules
 
 - Root `CLAUDE.md` stays small enough to be the default loaded file.
+- Root `AGENTS.md` mirrors the core harness for Codex-based work.
 - Topic-specific rules live under `docs/rules/` and are loaded only when needed.
 - Maintenance and continuation notes live under `docs/operations/`.
 - Claude command prompts live under `.claude/commands/`.

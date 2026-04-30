@@ -4,7 +4,8 @@ Use this index to load only the smallest useful set of instructions.
 
 ## Default Entry
 
-- `../CLAUDE.md`: core ABAP harness and default rules.
+- `../CLAUDE.md`: core ABAP harness for Claude Code.
+- `../AGENTS.md`: core ABAP harness for Codex.
 
 ## Topic Rules
 
@@ -20,7 +21,7 @@ Use this index to load only the smallest useful set of instructions.
 
 ## Load Strategy
 
-1. Load `../CLAUDE.md` first.
+1. Load the assistant-specific root file first: `../CLAUDE.md` or `../AGENTS.md`.
 2. Inspect the target ABAP repository for the closest existing example.
 3. Load exactly one topic rule when the task is BDC, CDS, AMDP, or Gateway.
 4. Use operations documents only when maintaining this harness.
